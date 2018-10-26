@@ -28,19 +28,19 @@
         <td></td>
       </tr>
       <tr>
-        <td>array[1].id</td>
+        <td id="idnumber2"></td>
         <td>Jackson</td>
         <td>94</td>
         <td></td>
       </tr>
       <tr>
-        <td>John</td>
+        <td id="idnumber3"></td>
         <td>Doe</td>
         <td>80</td>
         <td></td>
       </tr>
       <tr>
-        <td>John</td>
+        <td id="idnumber4"></td>
         <td>Doe</td>
         <td>80</td>
         <td></td>
@@ -58,7 +58,10 @@
         request.send();
         return request.response;
       }
-      document.getElementById("idnumber1").innerHTML =  array[2].id;;
+      document.getElementById("idnumber1").innerHTML =  array[0].id;;
+      document.getElementById("idnumber2").innerHTML =  array[1].id;;
+      document.getElementById("idnumber3").innerHTML =  array[2].id;;
+      document.getElementById("idnumber4").innerHTML =  array[3].id;;
     </script>
   </body>
 </html>
