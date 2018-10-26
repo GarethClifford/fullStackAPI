@@ -5,26 +5,6 @@
     <title></title>
     <h1> Account information page </h1>
     <h2> Please choose from the following options. </h2>
-  </head>
-  <body>
-    <p id="change"></p>
-    <p id="demo"></p>
-    <!-- <button type="submit" name="button" onclick=" getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button> -->
-    <a href="delete.html"><button type = "submit"> Remove an account </button></a>
-    <a href="add.html"><button type = "submit"> Add an account </button></a>
-
-
-    <table style="width:50%" id="accountTable">
-      <tr>
-        <th>ID number</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Account number</th>
-      </tr>
-    </table>
-
-
-
 
     <script>
       var array = eval(getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts'));
@@ -74,5 +54,27 @@
       // document.getElementById("lname1").innerHTML =  array[0].lastName;
       // document.getElementById("ano1").innerHTML =  array[0].accountNumber;
     </script>
+  </head>
+  <body>
+    <p id="change"></p>
+    <p id="demo"></p>
+    <!-- <button type="submit" name="button" onclick=" getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button> -->
+    <a href="delete.html"><button type = "submit"> Remove an account </button></a>
+    <a href="add.html"><button type = "submit"> Add an account </button></a>
+
+
+    <table style="width:50%" id="accountTable">
+      <tr>
+        <th>ID number</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Account number</th>
+      </tr>
+    </table>
+
+
+
+
+
   </body>
 </html>
