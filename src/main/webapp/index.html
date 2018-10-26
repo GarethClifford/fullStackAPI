@@ -29,7 +29,7 @@
     <script>
       var array = eval(getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts'));
       var i;
-      for(i = 0; i < array.length(); i++){
+      for(i = 0; i < array.length; i++){
         var table = document.getElementById("accountTable");
         table.innerHTML = <tr><td id="id"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>;
         var id = document.getElementById("id");
@@ -40,6 +40,7 @@
         fname.innerHTML = array[i].firstName;
         lname.innerHTML = array[i].secondName;
         ano.innerHTML = array[i].accountNumber;
+
       }
 
       function getAllAccounts(url) {
@@ -47,8 +48,6 @@
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
         request.send();
-
-
         return request.response;
       }
 
