@@ -9,7 +9,7 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick="getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
+    <button type="submit" name="button" onclick="tableOfAccounts()"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
     <script>
@@ -19,6 +19,39 @@
         request.send();
         document.getElementById("change").innerHTML = request.response;
       }
+      function tableOfAccounts() {}
+      var accountListInJson = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts');
+      var col = [];
+      for (var i = 0; i < getAll('http://localhost:8082/accountapp/api/account/getAllAccounts').length;i++) {
+        for (var key in getAll[i]) {
+          if(col.indexOf(key) === -1) {
+            col.push(key);
+          }
+        }
+      }
+      var table = document.createElement("table");
+      var tr = table.insertRow(-1);
+
+      for(var i =0; i < col.length;i++) {
+        var th = document.createElement("th");
+        th.innerHTML = col[i];
+        tr.appendChild(th);
+      }
+
+      for(var i=0; i < getAll('http://localhost:8082/accountapp/api/account/getAllAccounts').length; i++) {
+        tr = table.insertRow(-1);
+
+        for (var j = 0; j < col.length; j++) {
+          var tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')[i][col[j]];
+        }
+      }
+      var divContainer = document.getElementById("showData");
+      divContainer.innerHTML = "";
+      divContainer.appendChild(table);
+
+
+    }
     </script>
   </body>
 </html>
