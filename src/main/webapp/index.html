@@ -9,9 +9,45 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick=" getTable()"> Get all accounts </button>
+    <button type="submit" name="button" onclick=" getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
+
+
+    <table style="width:50%">
+      <tr>
+        <th>ID number</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Account number</th>
+      </tr>
+      <tr>
+        <td>array[0].id</td>
+        <td>Smith</td>
+        <td>50</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>array[1].id</td>
+        <td>Jackson</td>
+        <td>94</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+        <td></td>
+      </tr>
+    </table>
+
+
 
 
     <script>
@@ -23,45 +59,6 @@
         return request.response;
       }
       document.getElementById("idnumber1").innerHTML =  array[2].id;;
-
-
-      function getTable() {
-      <table style="width:50%">
-        <tr>
-          <th>ID number</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Account number</th>
-        </tr>
-        <tr>
-          <td>array[0].id</td>
-          <td>Smith</td>
-          <td>50</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>array[1].id</td>
-          <td>Jackson</td>
-          <td>94</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>80</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>80</td>
-          <td></td>
-        </tr>
-      </table>
-    }
-
-
-
       function tableOfAccounts() {
       var accountListInJson = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts');
       var col = [];
