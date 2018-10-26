@@ -9,16 +9,48 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick="tableOfAccounts()"> Get all accounts </button>
+    <button type="submit" name="button" onclick=" getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
+
+    <table>
+      <th>ID</th>
+      <tr>
+      <td id='idnumber1'>
+        array[0].id;
+      </td>
+      </tr>
+
+      <th>First Name</th>
+      <tr>
+      <td>
+        array[1].id
+      </td>
+      </tr>
+      <th>Last Name</th>
+      <tr>
+      <td>
+        array[2].id
+      </td>
+      </tr>
+    </table>
+
     <script>
+    var array = eval(getAll('http://localhost:8082/accountapp/api/account/getAllAccounts'));
       function getAll(url) {
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
         request.send();
-        document.getElementById("change").innerHTML = request.response;
+        return request.response;
+
       }
+      document.getElementById("idnumber1").innerHTML =  array[2].id;;
+
+
+
+
+
+
       function tableOfAccounts() {
       var accountListInJson = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts');
       var col = [];
