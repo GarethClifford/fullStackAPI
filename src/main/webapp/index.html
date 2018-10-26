@@ -31,11 +31,11 @@
       var i;
       for(i = 0; i < array.length; i++){
         var table = document.getElementById("accountTable");
-        table.innerHTML = '<tr><td id="id"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>';
-        var id = document.getElementById("id");
-        var fname = document.getElementById("fname");
-        var lname = document.getElementById("lname");
-        var ano = document.getElementById("ano");
+        table.innerHTML += '<tr><td id="id" + array[i].id></td><td id="fname" + array[i].id></td><td id="lname" + array[i].id></td><td id="ano" + array[i].id></td></tr>';
+        var id = document.getElementById("id" + array[i].id);
+        var fname = document.getElementById("fname" + array[i].id);
+        var lname = document.getElementById("lname" + array[i].id);
+        var ano = document.getElementById("ano" + array[i].id);
         id.innerHTML = array[i].id;
         fname.innerHTML = array[i].firstName;
         lname.innerHTML = array[i].secondName;
