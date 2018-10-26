@@ -9,7 +9,7 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick="getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
+    <button type="submit" name="button" onclick="table()"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
     <script>
@@ -19,6 +19,34 @@
         request.open("GET", url , false);
         request.send();
         document.getElementById("change").innerHTML = request.response;
+      }
+
+      function table() {
+        <table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">id</th>
+<th title="Field #2">firstName</th>
+<th title="Field #3">secondName</th>
+<th title="Field #4">accountNumber</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>John</td>
+<td>Doe</td>
+<td align="right">1234</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Jane</td>
+<td>Doe</td>
+<td align="right">1235</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Jim</td>
+<td>Taylor</td>
+<td align="right">1236</td>
+</tr>
+</tbody></table>
       }
     </script>
   </body>
