@@ -19,7 +19,7 @@
         request.send();
         document.getElementById("change").innerHTML = request.response;
       }
-      function tableOfAccounts() {}
+      function tableOfAccounts() {
       var accountListInJson = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts');
       var col = [];
       for (var i = 0; i < getAll('http://localhost:8082/accountapp/api/account/getAllAccounts').length;i++) {
