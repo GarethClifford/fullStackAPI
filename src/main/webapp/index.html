@@ -42,10 +42,10 @@
 
         return request.response;
       }
-
-      for(var i = 0; i < array.length(); i++){
+      var i;
+      for(i = 0; i < array.length(); i++){
         var table = document.getElementById("accountTable");
-        table.innerHTML = <tr><td id="id"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>
+        table.innerHTML = <tr><td id="id"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>;
         var id = document.getElementById("id");
         var fname = document.getElementById("fname");
         var lname = document.getElementById("lname");
