@@ -9,7 +9,7 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick="getAllInTable()"> Get all accounts </button>
+    <button type="submit" name="button" onclick="getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
     <script>
@@ -19,20 +19,6 @@
         request.open("GET", url , false);
         request.send();
         document.getElementById("change").innerHTML = request.response;
-      }
-
-      function getAllInTable() {
-        var obj = JSON.parse('getAll()');
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            document.getElementById("demo").innerHTML = myObj.name;
-        }
-    };
-    xmlhttp.open("GET", "json_demo.txt", true);
-    xmlhttp.send();
-
       }
     </script>
   </body>
