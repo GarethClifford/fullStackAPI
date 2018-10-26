@@ -9,43 +9,10 @@
   <body>
     <p id="change"></p>
     <p id="demo"></p>
-    <button type="submit" name="button" onclick=" getAll('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button>
+    <button type="submit" name="button" onclick=" getTable()"> Get all accounts </button>
     <a href="delete.html"><button type = "submit"> Remove an account </button></a>
     <a href="add.html"><button type = "submit"> Add an account </button></a>
-    function getTable() {
-    <table style="width:50%">
-      <tr>
-        <th>ID number</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Account number</th>
-      </tr>
-      <tr>
-        <td>array[0].id</td>
-        <td>Smith</td>
-        <td>50</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>array[1].id</td>
-        <td>Jackson</td>
-        <td>94</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>80</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>80</td>
-        <td></td>
-      </tr>
-    </table>
-  }
+
 
     <script>
     var array = eval(getAll('http://localhost:8082/accountapp/api/account/getAllAccounts'));
@@ -55,10 +22,43 @@
         request.send();
         return request.response;
       }
-      // document.getElementById("idnumber1").innerHTML =  array[2].id;;
+      document.getElementById("idnumber1").innerHTML =  array[2].id;;
 
 
-
+      function getTable() {
+      <table style="width:50%">
+        <tr>
+          <th>ID number</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Account number</th>
+        </tr>
+        <tr>
+          <td>array[0].id</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>array[1].id</td>
+          <td>Jackson</td>
+          <td>94</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>80</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>80</td>
+          <td></td>
+        </tr>
+      </table>
+    }
 
 
 
