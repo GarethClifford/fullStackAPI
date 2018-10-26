@@ -22,7 +22,7 @@
         <th>Account number</th>
       </tr>
       <tr>
-        <td>array[2].id</td>
+        <td id="idnumber1"></td>
         <td>Smith</td>
         <td>50</td>
         <td></td>
@@ -59,39 +59,6 @@
         return request.response;
       }
       document.getElementById("idnumber1").innerHTML =  array[2].id;;
-      function tableOfAccounts() {
-      var accountListInJson = getAll('http://localhost:8082/accountapp/api/account/getAllAccounts');
-      var col = [];
-      for (var i = 0; i < accountListInJson.length;i++) {
-        for (var key in getAll[i]) {
-          if(col.indexOf(key) === -1) {
-            col.push(key);
-          }
-        }
-      }
-      var table = document.createElement("table");
-      var tr = table.insertRow(-1);
-
-      for(var i =0; i < col.length;i++) {
-        var th = document.createElement("th");
-        th.innerHTML = col[i];
-        tr.appendChild(th);
-      }
-
-      for(var i=0; i < accountListInJson.length; i++) {
-        tr = table.insertRow(-1);
-
-        for (var j = 0; j < col.length; j++) {
-          var tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = accountListInJson[i][col[j]];
-        }
-      }
-      var divContainer = document.getElementById("showData");
-      divContainer.innerHTML = "";
-      divContainer.appendChild(table);
-
-
-    }
     </script>
   </body>
 </html>
