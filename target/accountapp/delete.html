@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <h1> Removal </h1>
+    <h2> Please enter the ID number of the account you wish to remove. </h2>
+  </head>
+  <body>
+
+    <input id="deleteid"
+    type = "number"
+    placeholder="ID number"
+    alt="Enter the ID number"> </input>
+
+  <button type="button" name="button" onclick="'http://localhost:8080/accountapp/api/account/deleteAccount/'+deleteid.value"> Delete account </button>
+
+  </body>
+</html>
