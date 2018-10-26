@@ -56,6 +56,7 @@
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
         request.send();
+        change.innerHTML = request.response;
         return request.response;
       }
       document.getElementById("id1").innerHTML =  array[0].id;
