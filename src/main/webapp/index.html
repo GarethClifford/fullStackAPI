@@ -15,14 +15,13 @@
 
 
     <table style="width:50%" id="accountTable">
-
     </table>
 
 
 
 
     <script>
-    function getTable() {
+
       var array = eval(getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts'));
       var i;
       var string = '';
@@ -41,10 +40,9 @@
         // lname.innerHTML = array[i].secondName;
         // ano.innerHTML = array[i].accountNumber;
       }
-      document.getElementById('table').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
+      document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
 
-    }
-get table();
+
       function getAllAccounts(url) {
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
