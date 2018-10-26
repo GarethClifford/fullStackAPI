@@ -14,7 +14,7 @@
     <a href="add.html"><button type = "submit"> Add an account </button></a>
 
 
-    <table style="width:50%">
+    <table style="width:50%" id="accountTable">
       <tr>
         <th>ID number</th>
         <th>Firstname</th>
@@ -26,24 +26,6 @@
         <td id="fname1"></td>
         <td id="lname1"></td>
         <td id="ano1"></td>
-      </tr>
-      <tr>
-        <td id="id2"></td>
-        <td id="fname2"></td>
-        <td id="lname2"></td>
-        <td id="ano2"></td>
-      </tr>
-      <tr>
-        <td id="id3"></td>
-        <td id="fname3"></td>
-        <td id="lname3"></td>
-        <td id="ano3"></td>
-      </tr>
-      <tr>
-        <td id="id4"></td>
-        <td id="fname4"></td>
-        <td id="lname4"></td>
-        <td id="ano4"></td>
       </tr>
     </table>
 
@@ -60,7 +42,21 @@
 
         return request.response;
       }
-      document.getElementById("id1").innerHTML =  array[0].id;
+
+      for(var i = 0; i < array.length(); i++){
+        var table = document.getElementById("accountTable");
+        table.innerHTML = <tr><td id="id"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>
+        var id = document.getElementById("id");
+        var fname = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var ano = document.getElementById("ano");
+        id.innerHTML = array[i].id;
+        fname.innerHTML = array[i].firstName;
+        lname.innerHTML = array[i].secondName;
+        ano.innerHTML = array[i].accountNumber;
+      }
+
+/*      document.getElementById("id1").innerHTML =  array[0].id;
       document.getElementById("fname1").innerHTML =  array[0].firstName;
       document.getElementById("lname1").innerHTML =  array[0].secondName;
       document.getElementById("ano1").innerHTML =  array[0].accountNumber;
@@ -73,7 +69,7 @@
       document.getElementById("id3").innerHTML =  array[2].id;
       document.getElementById("fname3").innerHTML =  array[2].firstName;
       document.getElementById("lname3").innerHTML =  array[2].secondName;
-      document.getElementById("ano3").innerHTML =  array[2].accountNumber;
+      document.getElementById("ano3").innerHTML =  array[2].accountNumber;*/
 
       // document.getElementById("id1").innerHTML =  array[0].id;
       // document.getElementById("fname1").innerHTML =  array[0].firstName;
