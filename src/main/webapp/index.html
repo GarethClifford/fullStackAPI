@@ -46,7 +46,7 @@
       function getAllAccounts(url) {
 
         var request = new XMLHttpRequest();
-        request.open("GET", url , false);
+        request.open("GET", url , true);
         request.send();
         return request.response;
       }
