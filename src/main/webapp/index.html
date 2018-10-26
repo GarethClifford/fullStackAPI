@@ -5,18 +5,38 @@
     <title></title>
     <h1> Account information page </h1>
     <h2> Please choose from the following options. </h2>
+  </head>
+  <body>
+    <p id="change"></p>
+    <p id="demo"></p>
+    <!-- <button type="submit" name="button" onclick=" getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button> -->
+    <a href="delete.html"><button type = "submit"> Remove an account </button></a>
+    <a href="add.html"><button type = "submit"> Add an account </button></a>
+
+
+    <table style="width:50%" id="accountTable">
+      <tr>
+        <th>ID number</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Account number</th>
+      </tr>
+    </table>
+
+
+
 
     <script>
       var array = eval(getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts'));
       var i;
       for(i = 0; i < array.length; i++){
         var table = document.getElementById("accountTable");
-        table.innerHTML += '<tr><td id="id" + array[i].id></td><td id="fname" + array[i].id></td><td id="lname" + array[i].id></td><td id="ano" + array[i].id></td></tr>';
-        var id = document.getElementById("id" + array[i].id);
+        table.innerHTML += '<tr><td id="idno" + array[i].id></td><td id="fname" + array[i].id></td><td id="lname" + array[i].id></td><td id="ano" + array[i].id></td></tr>';
+        var idno = document.getElementById("idno" + array[i].id);
         var fname = document.getElementById("fname" + array[i].id);
         var lname = document.getElementById("lname" + array[i].id);
         var ano = document.getElementById("ano" + array[i].id);
-        id.innerHTML = array[i].id;
+        idno.innerHTML = array[i].id;
         fname.innerHTML = array[i].firstName;
         lname.innerHTML = array[i].secondName;
         ano.innerHTML = array[i].accountNumber;
@@ -54,27 +74,5 @@
       // document.getElementById("lname1").innerHTML =  array[0].lastName;
       // document.getElementById("ano1").innerHTML =  array[0].accountNumber;
     </script>
-  </head>
-  <body>
-    <p id="change"></p>
-    <p id="demo"></p>
-    <!-- <button type="submit" name="button" onclick=" getAllAccounts('http://localhost:8082/accountapp/api/account/getAllAccounts')"> Get all accounts </button> -->
-    <a href="delete.html"><button type = "submit"> Remove an account </button></a>
-    <a href="add.html"><button type = "submit"> Add an account </button></a>
-
-
-    <table style="width:50%" id="accountTable">
-      <tr>
-        <th>ID number</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Account number</th>
-      </tr>
-    </table>
-
-
-
-
-
   </body>
 </html>
