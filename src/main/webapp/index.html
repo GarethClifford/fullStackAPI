@@ -25,10 +25,10 @@
       function forLoop(JSONobj) {
         for(i = 0; i < array.length; i++){
           var row = array[i];
-          string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + "</td><td><input type="button" value=~"delete" </td></tr>";
+          string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + "</td></tr>";
           var table = document.getElementById("accountTable");
         }
-        document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th><th>Delete</th></tr>' + string;
+        document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
       }
     forLoop(array);
       function getAllAccounts(url) {
