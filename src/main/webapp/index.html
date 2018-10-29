@@ -21,37 +21,18 @@
         <th>Last name</th>
         <th>Account number</th>
       </tr>
-      <tr>
-      <script> getTableData() </script>
-    </tr>
+
     </table>
 
-    <!-- <table style="width:50%" id="accountTable">
-    </table> -->
     <script>
-    function getTableData() {
-      <tr>
-        <td>Hello</td>
-        <td>Hello123</td>
-        <td>Hello098</td>
-        <td>Hello5ehys ysw</td>
-      </tr>
-    }
 
-
-
-
-
-
-
-    //
-    //   var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
-    //   var i;
-    //   var string = '';
-    //   function forLoop(JSONobj) {
-    //   for(i = 0; i < array.length; i++){
-    //     // var row = array[i];
-    //     // string += "<tr><td>" + row.id + "</td><td>" + row.firstName + "</td><td>" + row.secondName + "</td><td>" + row.accountNumber + "</td></tr>";
+   var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
+      var i;
+      var string = '';
+      function forLoop(JSONobj) {
+      for(i = 0; i < array.length; i++){
+      var row = array[i];
+      string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + "</td></tr>";
     //     console.log(JSONobj);
     //     var table = document.getElementById("accountTable");
     //     table.innerHTML += '<tr><td id="idno"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>';
@@ -66,7 +47,7 @@
     //   }
     //   document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
     // }
-    // forLoop(array);
+    forLoop(array);
   function getAllAccounts(url) {
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
