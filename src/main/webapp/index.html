@@ -5,7 +5,6 @@
     <title></title>
     <h1> Account information page </h1>
     <h2> Please choose from the following options. </h2>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
     <p id="change"></p>
@@ -23,55 +22,24 @@
 
     <script>
 
-      // var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
-      // var i;
-      // var string = '';
-      // for(i = 0; i < array.length; i++){
-      //   var row = array[i];
-      //   string += "<tr><td>" + row.id + "</td><td>" + row.firstName + "</td><td>" + row.secondName + "</td><td>" + row.accountNumber + "</td></tr>";
-      //
-      //   var table = document.getElementById("accountTable");
-      //   table.innerHTML += '<tr><td id="idno" + array[i].id></td><td id="fname" + array[i].id></td><td id="lname" + array[i].id></td><td id="ano" + array[i].id></td></tr>';
-      //   var idno = document.getElementById("idno" + array[i].id);
-      //   var fname = document.getElementById("fname" + array[i].id);
-      //   var lname = document.getElementById("lname" + array[i].id);
-      //   var ano = document.getElementById("ano" + array[i].id);
-      //   idno.innerHTML = array[i].id;
-      //   fname.innerHTML = array[i].firstName;
-      //   lname.innerHTML = array[i].secondName;
-      //   ano.innerHTML = array[i].accountNumber;
-      // }
+      var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
+      var i;
+      var string = '';
+      for(i = 0; i < array.length; i++){
+        var row = array[i];
+        string += "<tr><td>" + row.id + "</td><td>" + row.firstName + "</td><td>" + row.secondName + "</td><td>" + row.accountNumber + "</td></tr>";
 
-      var mylist = getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts');
-      function getTable(selector) {
-        var columns = addAllColumnHeaders(myList,selector);
-
-        for(var i=0;i< mylist.length;i++) {
-          var cellValue = myList[i][columns[colindex]];
-          if(cellValue == null) {
-            cellValue = "";
-            row$.append($('<td/>').html(cellValue));
-          }
-        }
-        $(selector).append(row$);
+        var table = document.getElementById("accountTable");
+        table.innerHTML += '<tr><td id="idno" + array[i].id></td><td id="fname" + array[i].id></td><td id="lname" + array[i].id></td><td id="ano" + array[i].id></td></tr>';
+        var idno = document.getElementById("idno" + array[i].id);
+        var fname = document.getElementById("fname" + array[i].id);
+        var lname = document.getElementById("lname" + array[i].id);
+        var ano = document.getElementById("ano" + array[i].id);
+        idno.innerHTML = array[i].id;
+        fname.innerHTML = array[i].firstName;
+        lname.innerHTML = array[i].secondName;
+        ano.innerHTML = array[i].accountNumber;
       }
-      function addAllColumnHeaders(myList, selector) {
-  var columnSet = [];
-  var headerTr$ = $('<tr/>');
-
-  for (var i = 0; i < myList.length; i++) {
-    var rowHash = myList[i];
-    for (var key in rowHash) {
-      if ($.inArray(key, columnSet) == -1) {
-        columnSet.push(key);
-        headerTr$.append($('<th/>').html(key));
-      }
-    }
-  }
-  $(selector).append(headerTr$);
-
-  return columnSet;
-}
 
 
 
