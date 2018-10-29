@@ -19,26 +19,17 @@
 
     <script>
 
-   var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
+    var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
       var i;
       var string = '';
       function forLoop(JSONobj) {
-      for(i = 0; i < array.length; i++){
-      var row = array[i];
-      string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + "</td></tr>";
-      var table = document.getElementById("accountTable");
-    //     table.innerHTML += '<tr><td id="idno"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>';
-    //     var idno = document.getElementById("idno");
-    //     var fname = document.getElementById("fname");
-    //     var lname = document.getElementById("lname");
-    //     var ano = document.getElementById("ano");
-    //     idno.innerHTML = JSONobj[i].id;
-    //     fname.innerHTML = JSONobj[i].firstName;
-    //     lname.innerHTML = JSONobj[i].secondName;
-    //     ano.innerHTML = JSONobj[i].accountNumber;
+        for(i = 0; i < array.length; i++){
+          var row = array[i];
+          string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + "</td><td><input type="button" value=~"delete" </td></tr>";
+          var table = document.getElementById("accountTable");
+        }
+        document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th><th>Delete</th></tr>' + string;
       }
-      document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
-    }
     forLoop(array);
       function getAllAccounts(url) {
         var request = new XMLHttpRequest();
@@ -46,25 +37,6 @@
         request.send(null);
         return request.response;
       }
-      // document.getElementById("id1").innerHTML =  array[0].id;
-      // document.getElementById("fname1").innerHTML =  array[0].firstName;
-      // document.getElementById("lname1").innerHTML =  array[0].secondName;
-      // document.getElementById("ano1").innerHTML =  array[0].accountNumber;
-      //
-      // document.getElementById("id2").innerHTML =  array[1].id;
-      // document.getElementById("fname2").innerHTML =  array[1].firstName;
-      // document.getElementById("lname2").innerHTML =  array[1].secondName;
-      // document.getElementById("ano2").innerHTML =  array[1].accountNumber;
-      //
-      // document.getElementById("id3").innerHTML =  array[2].id;
-      // document.getElementById("fname3").innerHTML =  array[2].firstName;
-      // document.getElementById("lname3").innerHTML =  array[2].secondName;
-      // document.getElementById("ano3").innerHTML =  array[2].accountNumber;
-      //
-      // document.getElementById("id1").innerHTML =  array[0].id;
-      // document.getElementById("fname1").innerHTML =  array[0].firstName;
-      // document.getElementById("lname1").innerHTML =  array[0].lastName;
-      // document.getElementById("ano1").innerHTML =  array[0].accountNumber;
     </script>
   </body>
 </html>
