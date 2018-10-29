@@ -39,6 +39,7 @@
       }
       document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
     }
+    forLoop();
   function getAllAccounts(url) {
         var request = new XMLHttpRequest();
         request.open("GET", url , false);
