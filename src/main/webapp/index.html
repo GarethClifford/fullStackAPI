@@ -21,6 +21,7 @@
       var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
       var i;
       var string = '';
+      fucntion forLoop() {
       for(i = 0; i < array.length; i++){
         // var row = array[i];
         // string += "<tr><td>" + row.id + "</td><td>" + row.firstName + "</td><td>" + row.secondName + "</td><td>" + row.accountNumber + "</td></tr>";
@@ -37,6 +38,8 @@
         ano.innerHTML = array[i].accountNumber;
       }
       document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
+    }
+    
 
   function getAllAccounts(url) {
         var request = new XMLHttpRequest();
