@@ -27,10 +27,10 @@
 
         var table = document.getElementById("accountTable");
         table.innerHTML += '<tr><td id="idno"></td><td id="fname"></td><td id="lname"></td><td id="ano"></td></tr>';
-        var idno = document.getElementById("idno" + array[i].id);
-        var fname = document.getElementById("fname" + array[i].id);
-        var lname = document.getElementById("lname" + array[i].id);
-        var ano = document.getElementById("ano" + array[i].id);
+        var idno = document.getElementById("idno");
+        var fname = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var ano = document.getElementById("ano");
         idno.innerHTML = array[i].id;
         fname.innerHTML = array[i].firstName;
         lname.innerHTML = array[i].secondName;
