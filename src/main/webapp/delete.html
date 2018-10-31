@@ -18,7 +18,7 @@
   <script>
   function removeAccount() {
     var http = new XMLHttpRequest();
-    var anumber = document.getElementById('accountnumber');
+    var anumber = document.getElementById('deleteid');
     var url = 'http://localhost:8081/accountapp/api/account/removeAccount/' + anumber.value;
     http.open("DELETE",url, false);
     http.send(http.response);
