@@ -39,10 +39,9 @@
       }
       function removeAccount(accnumber) {
         var http = new XMLHttpRequest();
-        var anumber = array[i].id;
         var url = 'http://localhost:8081/accountapp/api/account/deleteAccount/' + accnumber;
         http.open("DELETE", url, false);
-        http.send(http.response);
+        http.send(null);
       }
 
     </script>
