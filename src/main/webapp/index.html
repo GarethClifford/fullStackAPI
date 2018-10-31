@@ -43,11 +43,12 @@
         var url = 'http://localhost:8081/accountapp/api/account/deleteAccount/' + accnumber;
         http.open("DELETE", url, false);
         http.send(null);
-        refreshPage();
-      }
-      function refreshPage(){
+        // refreshPage();
         window.location.reload();
       }
+      // function refreshPage(){
+      //   window.location.reload();
+      // }
 
     </script>
   </body>
