@@ -25,10 +25,10 @@
       function forLoop(JSONobj) {
         for(i = 0; i < array.length; i++){
           var row = array[i];
-          string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + '</td><td> <input type="button" value="Remove account" onclick="removeAccount()/">' + "</td></tr>";
+          string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + '</td><td> <input type="button" value="Remove account" onclick="removeAccount(" + array[i].id + ")/">' + "</td></tr>";
           var table = document.getElementById("accountTable");
         }
-        document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th></tr>' + string;
+        document.getElementById('accountTable').innerHTML = '<tr><th>ID number</th><th>Firstname</th><th>Lastname</th><th>Account number</th><th>Delete account</th></tr>' + string;
       }
     forLoop(array);
       function getAllAccounts(url) {
@@ -37,10 +37,10 @@
         request.send(null);
         return request.response;
       }
-      function removeAccount() {
+      function removeAccount(accnumber) {
         var http = new XMLHttpRequest();
         var anumber = array[i].id;
-        var url = 'http://localhost:8081/accountapp/api/account/deleteAccount/' + anumber;
+        var url = 'http://localhost:8081/accountapp/api/account/deleteAccount/' + accnumber;
         http.open("DELETE", url, false);
         http.send(http.response);
       }
