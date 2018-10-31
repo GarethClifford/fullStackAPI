@@ -25,7 +25,27 @@
     placeholder="Account number"
     alt="Enter your account number"> </input>
     <br></br>
-    <button type="button" name="button" onclick="'"> Create account </button>
+    <a href="index.html"><button type="button" name="button" onclick="addAccount()"> Create account </button></a>
 
+
+
+
+
+    <script>
+    function addAccount() {
+      var http = new XMLHttpRequest();
+      var fname = document.getElementById('firstname');
+      var lname = document.getElementById('lastname');
+      var anumber = document.getElementById('accountnumber');
+      var url = 'http://localhost:8081/accountapp/api/account/createAccount';
+      http.open("POST",url, false);
+      http.send(JSON.stringify({firstName:fname.value,secondName:lname.value,accountNumber:anumber.value}));
+    }
+
+
+
+
+
+    </script>
   </body>
 </html>
