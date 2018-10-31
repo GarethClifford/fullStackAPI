@@ -14,7 +14,7 @@
     <a href="add.html"><button type = "submit"> Add an account </button></a>
 
 
-    <table style="width:25%" id:"accountTable">
+    <table style="width:25%" id="accountTable">
     </table>
 
     <script>
@@ -43,8 +43,12 @@
         var url = 'http://localhost:8081/accountapp/api/account/deleteAccount/' + accnumber;
         http.open("DELETE", url, false);
         http.send(null);
+        // refreshPage();
         window.location.reload();
       }
+      // function refreshPage(){
+      //   window.location.reload();
+      // }
 
     </script>
   </body>
