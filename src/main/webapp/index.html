@@ -21,8 +21,9 @@
 
     var array = eval(getAllAccounts('http://localhost:8081/accountapp/api/account/getAllAccounts'));
       var i;
-      var string = '';
+
       function forLoop(JSONobj) {
+        var string = '';
         for(i = 0; i < array.length; i++){
           var row = array[i];
           string += "<tr><td>" + array[i].id + "</td><td>" + array[i].firstName + "</td><td>" + array[i].secondName + "</td><td>" + array[i].accountNumber + '</td><td> <input type="button" value="Remove account" onclick=\'removeAccount('+ array[i].id + ' )\'/>' + "</td></tr>";
